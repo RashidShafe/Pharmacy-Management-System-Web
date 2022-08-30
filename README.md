@@ -1,1 +1,1 @@
-# Pharmacy-Management-System-Web-
+# Pharmacy-Management-System-Web
