@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, 
+    initial-scale=1.0">
+    <title>Reg. Form</title>
+    <style>
+        html{
+            height: 100%;
+        }
+        body{
+            font-family: cursive;
+            font-size: large;
+            background-image: url(https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg?cs=srgb&dl=pexels-pixabay-40568.jpg&fm=jpg);
+            background-size: cover; 
+            background-repeat: no-repeat;
+        }
+        .main{
+            width:40%;
+            margin:90px 0px 0px 150px;
+            color: blanchedalmond;
+            border-radius: 20px;
+            background-color: rgba(0,0,0,0.7);
+            box-shadow:0 0 50px 20px  rgb(238, 112, 74);
+            padding-top: 10px;
+            padding-bottom: 20px;
+        }
+        h2, .btn{
+            /* padding-top: 10px; */
+            text-align: center;
+        }
+        .reg{
+            margin-left: 25px;
+            margin-right: 40px;
+            border-radius: 20px;
+        }
+        input.cls
+        {
+            width: 100%;
+            padding: 5px;
+            border-radius:5px;
+            font-family: cursive;
+            font-size: 16px;
+            color: black;
+            background-color: rgba(255, 222, 194, 0.733);
+        }
+        input.cls:focus{
+            background: rgb(250, 227, 220);
+        }
+        
+        .btn input{
+            font-weight:bold;
+            margin: 0px auto;
+            margin-bottom: 20px;
+            font-family: cursive;
+            font-size:18px;
+            border:2px solid rgb(128, 239, 247);
+            border-radius: 30px;
+            background: rgb(38, 69, 105);
+            color: white;
+            width:100px;
+            padding:5px;
+        }
+        .btn input:hover{
+            cursor: pointer;
+            color:  rgb(17, 17, 17);
+            background: rgb(236, 227, 227);
+        }
+       a{
+        color:cyan;
+        text-decoration: none;
+        background: rgb(53, 53, 53);
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 15px;
+       
+       }
+       a:hover{
+        color:  rgb(17, 17, 17);
+        background: rgb(236, 227, 227);
+    }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h2>Create Your Account</h2>
+        <div class="reg">
+            <form method="post" id="regs">
+                <label  for="name">Name:</label><br>
+                <input class="cls" type="text" name="name" id="name" placeholder="Enter Name"><br><br>
+                <label for="mail">E-mail:</label><br>
+                <input class="cls" type="email" name="mail" id="mail" placeholder="Enter e-mail"><br><br>
+                <label for="phone">Phone:</label><br>
+                <input class="cls" type="number" name="phone" id="phone" placeholder="01*********"><br><br>
+                <label for="username">Username:</label><br>
+                <input class="cls" type="text" name="username" id="username"><br><br>
+                <label for="passwprd">Password:</label>
+                <input class="cls" type="password" name="password" id="password" placeholder="******(Minimum length 6 character)">
+                <br><br>
+                <label for="Address">Address:</label>
+                <input class="cls" type="textarea" name="address" id="address">
+                
+                <br><br>
+                <div class="btn">
+                <input type="submit" onclick="chk()" name="submit" id="submit" value="Submit">
+                <input type="reset" value="Reset"><br>
+                <a class="btn" href="1login.php">I have an Account</a>
+                </div>
+            </form> 
+        </div>
+    </div>
+</body>
+
+<script>
+    function chk() {
+        var name=document.getElementById("name").value;
+        var mail=document.getElementById("mail").value;
+        var phone=document.getElementById("phone").value;
+        var username=document.getElementById("username").value;
+        var password=document.getElementById("password").value;
+        var address=document.getElementById("address").value;
+        if(name!="" && mail!="" && phone!="" && username!="" && password!="" && address!="" && password.length>5)
+        {
+            document.getElementById("regs").action="2reg.php";
+        }
+        
+        else
+        {
+           alert("Please complete all field correctly.")
+        }
+    }
+</script>
+
+</html>
